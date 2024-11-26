@@ -1,0 +1,84 @@
+.main {
+  position: relative;
+  left: 15%;
+  width: 85%;
+  &__content{
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    top: 65px;
+  }
+  &__title{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: rgba(46, 50, 56, 1);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.required, .error{
+  color: red;
+}
+
+.form {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 16px;
+  &__field{
+    display: flex;
+    flex-direction: column;
+  }
+  .comments, .decision{
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  &__options{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    input.time{
+      width: 95%;
+      height: 45px;
+    }
+    input::-webkit-calendar-picker-indicator {
+      opacity: 0;
+    }
+  }
+}
+
+label {
+  margin-bottom: 8px;
+}
+
+@media(max-width: 1200px){
+  .main{
+    left: 26%;
+    width: 74%;
+  }
+}
+
+@media(max-width: 991px){
+  .main{
+  left: 4%;
+  width: 97%;
+}
+  .form{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media(max-width: 767px){
+  .main{
+    width: 100vw;
+    left: 0;
+    &__title{
+      font-size: 20px;
+    }
+  }
+}

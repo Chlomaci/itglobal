@@ -1,0 +1,68 @@
+.main__header {
+  position: fixed;
+  top: 65px;
+  z-index: 1000;
+  padding: 16px;
+  display: flex;
+  width: 85%;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+  background-color: white;
+  &_subtask {
+    display: flex;
+    align-items: center;
+  }
+  &.shadow{
+  box-shadow: 2px 4px 4px rgb(0, 0, 0, 0.25);
+  }
+}
+
+.subtask {
+  &__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    margin-right: 16px;
+    color: rgba(46, 50, 56, 1);
+  }
+
+}
+.subtask__btn, .save, .saveAndExit {
+  padding: 6px 12px;
+}
+
+.save {
+  margin-right: 4px;
+  background-color: rgba(0, 120, 207, 1);
+  color: white;
+
+}
+@media(max-width: 1200px){
+  .main__header{
+    width: 73%;
+  }
+}
+@media(max-width: 991px){
+  .main__header{
+    width: 95%;
+  }
+}
+@media(max-width: 767px){
+  .main__header{
+    width: 100%;
+    top: 73px;
+    display: block;
+    &_buttons{
+      display: none;
+    }
+    &_subtask{
+      justify-content: space-between;
+    }
+  }
+}
+
+@media(max-width: 320px){
+  .main__header{
+    top: 81px;
+  }
+}

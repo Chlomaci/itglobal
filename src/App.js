@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Header from "./components/header";
+import Menu from './components/Menu';
+import Main from "./components/Main";
+import Modal from './components/Modal'
+import { useSelector } from 'react-redux'
 
 function App() {
+    const isModal = useSelector(state => state.main.isModal)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Header/>
+        <div className="app__content">
+            <Menu/>
+            <Main/>
+        </div>
+        {isModal ? <Modal /> : ''}
     </div>
   );
 }
